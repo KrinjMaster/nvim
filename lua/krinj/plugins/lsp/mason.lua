@@ -28,6 +28,7 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         "tsserver",
+        "clangd",
         "html",
         "cssls",
         "tailwindcss",
@@ -35,6 +36,7 @@ return {
         "lua_ls",
         "emmet_ls",
         "pyright",
+        "eslint",
         "rust_analyzer",
       },
       -- auto-install configured servers (with lspconfig)
@@ -48,6 +50,7 @@ return {
         "isort", -- python formatter
         "black", -- python formatter
         "eslint_d", -- js linter
+        "eslint",
         "rust_analyzer",
       },
     })

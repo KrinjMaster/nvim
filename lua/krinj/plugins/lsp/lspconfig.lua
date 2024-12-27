@@ -82,6 +82,18 @@ return {
       on_attach = on_attach,
     })
 
+    lspconfig["eslint"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["clangd"].setup({
+      on_attach = on_attach,
+      flags = {
+        debounce_text_changes = 150,
+      },
+    })
+
     -- configure css server
     lspconfig["cssls"].setup({
       capabilities = capabilities,

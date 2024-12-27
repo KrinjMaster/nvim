@@ -40,6 +40,7 @@ return {
           "vim",
           "dockerfile",
           "gitignore",
+          "cpp",
           "query",
           "rust",
           "svelte",

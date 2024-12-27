@@ -3,6 +3,8 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
 
+keymap.set("v", "<C-r>", '"hy:%s/<C-r>h//gc<left><left><left>', { noremap = true, silent = true })
+
 keymap.set("n", "<C-h>", "<C-w>w", { noremap = true, silent = true })
 keymap.set("n", "<C-l>", "<C-w>w", { noremap = true, silent = true })
 
@@ -19,6 +21,3 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
-
-keymap.set("n", "<S-l>", ":bnext<cr>", { desc = "Next buffer" })
-keymap.set("n", "<S-h>", ":bprev<cr>", { desc = "Previous buffer" })

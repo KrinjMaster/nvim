@@ -9,7 +9,13 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = "*.ts,*.tsx",
+  command = "EslintFixAll",
+})
 
 require("lazy").setup({ { import = "krinj.plugins" }, { import = "krinj.plugins.lsp" } }, {
   checker = {
