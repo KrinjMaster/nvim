@@ -34,7 +34,6 @@ return {
         "tailwindcss",
         "svelte",
         "lua_ls",
-        "emmet_ls",
         "pyright",
         "eslint",
         "rust_analyzer",
@@ -42,7 +41,6 @@ return {
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
     })
-
     mason_tool_installer.setup({
       ensure_installed = {
         "prettier", -- prettier formatter
