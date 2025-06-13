@@ -1,4 +1,4 @@
-vim.cmd("language en_US")
+vim.cmd("let $LANG='en_US.UTF-8'")
 
 local opt = vim.opt -- for conciseness
 

@@ -47,7 +47,7 @@ return {
         "stylua", -- lua formatter
         "isort", -- python formatter
         "black", -- python formatter
-        "eslint_d", -- js linter
+        "eslint", -- js linter
         "eslint",
         "rust_analyzer",
       },
