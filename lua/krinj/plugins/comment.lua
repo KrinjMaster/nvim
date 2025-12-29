@@ -1,19 +1,24 @@
 return {
   "numToStr/Comment.nvim",
-  event = { "BufReadPre", "BufNewFile" },
+  event = { "BufReadPost", "BufNewFile" }, -- use BufReadPost
   dependencies = {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    "nvim-treesitter/nvim-treesitter",
     "JoosepAlviste/nvim-ts-context-commentstring",
   },
   config = function()
-    -- import comment plugin safely
-    local comment = require("Comment")
+    local ok1, comment = pcall(require, "Comment")
+    if not ok1 then
+      return
+    end
 
-    local ts_context_commentstring = require("ts_context_commentstring.integrations.comment_nvim")
+    local ok2, ts_context_commentstring = pcall(require, "ts_context_commentstring.integrations.comment_nvim")
+    if not ok2 then
+      ts_context_commentstring = nil
+    end
 
-    -- enable comment
     comment.setup({
-      -- for commenting tsx and jsx files
-      pre_hook = ts_context_commentstring.create_pre_hook(),
+      pre_hook = ts_context_commentstring and ts_context_commentstring.create_pre_hook() or nil,
     })
   end,
 }
