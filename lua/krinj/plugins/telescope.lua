@@ -1,13 +1,11 @@
 return {
-    'nvim-telescope/telescope.nvim', tag = 'v0.2.0',
+  "nvim-telescope/telescope.nvim",
+  tag = "v0.2.0",
   dependencies = {
     "nvim-lua/plenary.nvim",
-{
+    {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
-      cond = function()
-        return vim.fn.executable("make") == 1
-      end,
     },
     "nvim-tree/nvim-web-devicons",
   },
@@ -41,8 +39,6 @@ return {
     keymap.set("n", "<leader>fu", ":Telescope buffers<cr>", { desc = "Find string under cursor in cwd" })
   end,
 }
-
-
 
 -- return {
 --

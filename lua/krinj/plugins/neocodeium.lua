@@ -26,11 +26,11 @@ return {
     })
 
     -- set up some sort of keymap to cycle and complete to trigger completion
-    vim.keymap.set("i", "<S-a>", function()
-      neocodeium.cycle_or_complete()
+    vim.keymap.set("i", "<C-x>", function()
+      neocodeium.clear()
     end)
     -- make sure to have a mapping to accept a completion
-    vim.keymap.set("i", "<S-F>", function()
+    vim.keymap.set("i", "<C-F>", function()
       neocodeium.accept()
     end)
   end,

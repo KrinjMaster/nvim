@@ -49,11 +49,6 @@ return {
         completion = true,
         hover = true,
       },
-      completion = {
-        cmp = {
-          enabled = true,
-        },
-      },
     })
   end,
 }
